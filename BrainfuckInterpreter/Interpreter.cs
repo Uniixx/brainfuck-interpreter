@@ -24,14 +24,12 @@ namespace BrainfuckInterpreter
 				return;
 			}
 
-			if (ins.Next is null)
-			{
-				ins.Value.Execute();
-				return;
-			}
-
 			ins.Value.Execute();
-			this.Execute(ins.Next);
+
+			if (ins.Next is not null)
+			{
+				this.Execute(ins.Next);
+			}
 		}
 
 		public void Compile(string bf)
