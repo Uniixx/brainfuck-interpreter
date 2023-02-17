@@ -26,11 +26,11 @@ namespace BrainfuckInterpreter
 
 			if (ins.Next is null)
 			{
-				ins.Value.Execute(ins);
+				ins.Value.Execute();
 				return;
 			}
 
-			ins.Value.Execute(ins);
+			ins.Value.Execute();
 			this.Execute(ins.Next);
 		}
 
